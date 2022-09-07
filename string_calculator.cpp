@@ -20,20 +20,24 @@ public:
                 }
                 ans += temp;
             }
+            if (numbers[i] <= 'z' && numbers[i] >= 'a')
+            {
+                ans += numbers[i] - '`';
+            }
+
+            return ans;
         }
-        return ans;
-    }
-};
+    };
 
-int main()
-{
-    StringCalculator s1;
-
-    vector<string> numbers = {"0", "1,2,3", "123,432,56", "1,2,a,b", "-1,2,4,d,-6", "12003,1,3", "34/n54,89"};
-    for (string str : numbers)
+    int main()
     {
-        cout << s1.addString(str) << endl;
-    }
+        StringCalculator s1;
 
-    return 0;
-}
+        vector<string> numbers = {"0", "1,2,3", "123,432,56", "1,2,a,b", "-1,2,4,d,-6", "12003,1,3", "34/n54,89"};
+        for (string str : numbers)
+        {
+            cout << s1.addString(str) << endl;
+        }
+
+        return 0;
+    }
