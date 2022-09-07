@@ -22,6 +22,8 @@ public:
                     temp += (numbers[i] - '0');
                     i++;
                 }
+                if (temp > 1000)
+                    continue;
                 ans += temp;
             }
 
